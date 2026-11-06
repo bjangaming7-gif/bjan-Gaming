@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bjan Gaming | Gaming Universe</title>
+<meta name="description" content="Bjan Gaming — your ultimate gaming universe.">
+<style>
+:root{--bg:#070914;--panel:#101629;--cyan:#00eaff;--purple:#8b5cff;--text:#f4f7ff;--muted:#a7b1ca}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 75% 10%,#172044 0,transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#070914d9;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:1px;font-size:1.15rem}.brand span{color:var(--cyan);text-shadow:0 0 16px #00eaff77}
+nav{display:flex;gap:25px;color:var(--muted);font-size:.95rem}nav a:hover{color:var(--cyan)}
+.menu{display:none;background:none;border:1px solid #ffffff25;color:white;padding:8px 12px;border-radius:9px}
+.hero{min-height:570px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding:65px 0}
+.tag{display:inline-flex;border:1px solid #00eaff55;color:var(--cyan);background:#00eaff0b;padding:8px 13px;border-radius:99px;font-size:.78rem;letter-spacing:2px;font-weight:700}
+h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.98;margin:22px 0;font-weight:950;letter-spacing:-3px}
+h1 em{font-style:normal;color:var(--cyan);text-shadow:0 0 30px #00eaff44}
+.lead{color:var(--muted);font-size:1.08rem;line-height:1.8;max-width:540px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid #ffffff25;padding:13px 19px;border-radius:12px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s}
+.btn.primary{background:linear-gradient(110deg,var(--cyan),#6b7cff);color:#07101a;border:0;box-shadow:0 0 25px #00eaff2c}.btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
+.visual{height:390px;border-radius:28px;position:relative;overflow:hidden;border:1px solid #ffffff18;background:linear-gradient(145deg,#17234b,#101225 55%,#28184a);box-shadow:0 25px 80px #0008}
+.visual:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#00eaff35;filter:blur(65px);top:30px;left:20px}
+.visual:after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#8b5cff55;filter:blur(65px);bottom:-30px;right:0}
+.orbit{position:absolute;inset:12%;border:1px solid #00eaff40;border-radius:50%;transform:rotate(-25deg);z-index:1}
+.orbit.two{inset:22%;transform:rotate(35deg);border-color:#a58bff55}
+.core{position:absolute;inset:0;display:grid;place-items:center;font-size:7rem;z-index:2;text-shadow:0 0 35px #00eaffaa;animation:float 4s ease-in-out infinite}
+.visual-label{position:absolute;bottom:22px;left:24px;z-index:3;font-weight:800;letter-spacing:3px;color:#dcecff}
+@keyframes float{50%{transform:translateY(-12px)}}
+section{padding:75px 0}.section-head{text-align:center;margin-bottom:35px}.section-head h2{font-size:2.2rem;margin:10px 0}.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#11182c,#0b1020);border:1px solid #ffffff12;border-radius:18px;padding:23px;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#00eaff55;box-shadow:0 15px 40px #00eaff0c}.icon{width:52px;height:52px;border-radius:14px;background:#00eaff12;border:1px solid #00eaff30;display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}.card h3{margin:0 0 10px}.card p{color:var(--muted);line-height:1.65;margin:0}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.game{min-height:190px;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:end;border:1px solid #ffffff16;background:linear-gradient(135deg,#202d5c,#111426 65%);position:relative;overflow:hidden}.game:nth-child(2){background:linear-gradient(135deg,#3c205d,#111426 65%)}.game:nth-child(3){background:linear-gradient(135deg,#164d54,#111426 65%)}.game:before{content:"";position:absolute;width:150px;height:150px;right:-25px;top:-35px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 20px #ffffff06,0 0 0 40px #ffffff04}.game small{color:var(--cyan);letter-spacing:2px;font-weight:800}.game h3{font-size:1.4rem;margin:8px 0 0;z-index:1}
+.community{background:linear-gradient(110deg,#0d1b30,#17112a);border:1px solid #ffffff15;border-radius:24px;padding:38px;text-align:center}.community h2{font-size:2rem;margin:0 0 12px}.community p{color:var(--muted);max-width:650px;margin:0 auto 24px;line-height:1.7}
+footer{border-top:1px solid #ffffff12;padding:28px 0;color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#142039;border:1px solid #00eaff55;padding:12px 18px;border-radius:12px;display:none;z-index:20}
+
+.modal{position:fixed;inset:0;background:#03050bd9;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px;z-index:30}
+.modal.show{display:flex}.modal-box{width:min(480px,100%);background:linear-gradient(145deg,#131b31,#090d19);border:1px solid #00eaff44;border-radius:22px;padding:26px;box-shadow:0 20px 70px #00eaff16;position:relative}
+.modal-box h2{margin:0 0 7px;font-size:1.7rem}.modal-box .sub{color:var(--muted);margin:0 0 20px;font-size:.92rem}
+.close{position:absolute;right:17px;top:15px;border:1px solid #ffffff25;background:#ffffff08;color:white;border-radius:9px;padding:6px 10px;cursor:pointer}
+.field{margin:13px 0}.field label{display:block;font-size:.85rem;color:#c8d4ee;margin-bottom:7px}.field input,.field select{width:100%;padding:13px;border-radius:10px;border:1px solid #ffffff20;background:#080d1a;color:white;outline:none;font:inherit}.field input:focus,.field select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #00eaff12}
+.field select option{background:#101629}.modal-box .btn{width:100%;margin-top:8px}.privacy{font-size:.76rem;color:#8290ad;line-height:1.5;margin-top:12px}
+
+
+.game-modal{position:fixed;inset:0;background:#02040bdc;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:14px;z-index:40}
+.game-modal.show{display:flex}.game-box{width:min(980px,100%);background:#090e1c;border:1px solid #00eaff55;border-radius:18px;overflow:hidden;box-shadow:0 25px 90px #000a}
+.game-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #ffffff15;gap:12px}.game-top strong{color:var(--cyan)}.game-frame{width:100%;height:min(66vh,600px);border:0;display:block;background:#05070d}.game-note{padding:12px 18px;color:var(--muted);font-size:.82rem;line-height:1.5}
+
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:50px 0}.visual{height:300px}.cards,.games{grid-template-columns:1fr 1fr}nav{display:none;position:absolute;top:74px;left:0;right:0;background:#080b17;padding:20px;flex-direction:column;border-bottom:1px solid #ffffff18}.menu{display:block}nav.open{display:flex}}
+@media(max-width:520px){.cards,.games{grid-template-columns:1fr}h1{letter-spacing:-2px}.community{padding:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">BJAN <span>GAMING</span></a>
+<nav id="nav"><a href="#home">Home</a><a href="#features">Features</a><a href="#games">Games</a><a href="#community">Community</a></nav>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
+</div></header>
+<main>
+<div class="wrap hero" id="home">
+<div><span class="tag">WELCOME TO THE GAMING UNIVERSE</span>
+<h1>PLAY.<br><em>LEVEL UP.</em><br>REPEAT.</h1>
+<p class="lead">Enter Bjan Gaming — a next-level gaming hub built for players, creators, and competitive legends. Your adventure starts here.</p>
+<div class="actions"><a class="btn primary" href="#games">Explore Games ↗</a><a class="btn" href="#community">Join the Community</a></div>
+</div>
+<div class="visual" aria-label="Futuristic gaming illustration"><div class="orbit"></div><div class="orbit two"></div><div class="core">🎮</div><div class="visual-label">BJAN // GAMING</div></div>
+</div>
+<section id="features"><div class="wrap"><div class="section-head"><span class="tag">WHY BONGOL?</span><h2>Built for gamers</h2><p>Everything you need for your gaming journey.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">⚡</div><h3>Fast & Smooth</h3><p>A clean, responsive experience designed for mobile and desktop players.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Competitive Spirit</h3><p>Show your skills, chase new challenges, and aim for the top.</p></div>
+<div class="card"><div class="icon">🌐</div><h3>Gaming Community</h3><p>Connect with fellow players, share moments, and grow together.</p></div>
+</div></div></section>
+<section id="games"><div class="wrap"><div class="section-head"><span class="tag">GAME ZONE</span><h2>Choose your battlefield</h2><p>Your next favorite game is waiting.</p></div>
+<div class="games">
+<div class="game"><small>01 / ACTION</small><h3>Battle Arena</h3></div>
+<div class="game"><small>02 / SURVIVAL</small><h3>Survival World</h3></div>
+<div class="game"><small>03 / ADVENTURE</small><h3>Open Quest</h3></div>
+</div></div></section>
+<section id="community"><div class="wrap"><div class="community"><h2>Ready to join the universe?</h2><p>Bjan Gaming is your gaming destination. Stay connected and be part of the next level.</p><button class="btn primary" id="join">Join Bjan Gaming ↗</button></div></div></section>
+<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="modal-box">
+    <button class="close" id="closeModal" type="button" aria-label="Close">✕</button>
+    <span class="tag">PLAYER REGISTRATION</span>
+    <h2 id="formTitle">Join Bjan Gaming</h2>
+    <p class="sub">Fill in your details to join Bjan Gaming.</p>
+    <form id="joinForm">
+      <div class="field"><label for="playerName">Name</label><input id="playerName" name="name" type="text" placeholder="Enter your name" required maxlength="80"></div>
+      <div class="field"><label for="playerEmail">Gmail</label><input id="playerEmail" name="email" type="email" placeholder="you@gmail.com" required maxlength="120"></div>
+      <div class="field"><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
+      <div class="field"><label for="age">Age</label><input id="age" name="age" type="number" min="13" max="100" placeholder="Your age in years" required></div>
+      <button class="btn primary" type="submit">Enter ↗</button>
+      <p class="privacy">Your details will be sent only after you submit. Please don't enter passwords or sensitive information.</p>
+    </form>
+  </div>
+</div>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Bjan Gaming. All rights reserved.</span><span>Designed for gamers • Powered by imagination</span></div></footer>
+<div class="toast" id="toast">Welcome to Bjan Gaming! 🎮</div>
+<script>
+const nav=document.getElementById('nav'),menu=document.getElementById('menu');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const modal=document.getElementById('joinModal');
+document.getElementById('join').addEventListener('click',()=>modal.classList.add('show'));
+document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('show'));
+document.getElementById('closeGta').addEventListener('click',()=>{document.getElementById('gtaModal').classList.remove('show');document.getElementById('gameFrame').src='about:blank'});
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
+document.getElementById('joinForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.currentTarget;
+  const name=f.elements.name.value.trim(), email=f.elements.email.value.trim();
+  const gender=f.elements.gender.value, age=f.elements.age.value;
+  const subject=encodeURIComponent('Bjan Gaming — New Player Registration');
+  const body=encodeURIComponent('New registration for Bjan Gaming\\n\\nName: '+name+'\\nGmail: '+email+'\\nGender: '+gender+'\\nAge: '+age+' years');
+  // mailto opens the visitor's configured email app; it does not send automatically.
+  window.location.href='mailto:bjangaming7@gmail.com?subject='+subject+'&body='+body;
+  modal.classList.remove('show');
+  const t=document.getElementById('toast');
+  t.textContent='Registration email draft prepared. Send it, then open/install Free Fire from Google Play.';
+  t.style.display='block'; setTimeout(()=>t.style.display='none',5000);
+  setTimeout(()=>{window.location.href='https://play.google.com/store/apps/details?id=com.dts.freefireth';},1200); 
+});
+</script>
+</body>
+</html>
